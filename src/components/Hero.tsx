@@ -131,7 +131,9 @@ const Hero = () => {
             {/* Left content */}
             <div className="pt-4">
               <h1 className="mb-6 text-5xl font-extrabold leading-[1.1] tracking-tight text-foreground lg:text-6xl">
-                Get the best emails and mobile numbers, Anywhere
+                Get the best emails and<br />
+                mobile numbers,<br />
+                Anywhere
               </h1>
               <p className="mb-10 max-w-lg text-lg text-muted-foreground">
                 Find verified professional emails and phone numbers from professional profiles and any website.
