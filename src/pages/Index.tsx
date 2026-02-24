@@ -1,5 +1,5 @@
 import Hero from "@/components/Hero";
-import Features from "@/components/Features";
+
 import HowItWorks from "@/components/HowItWorks";
 import Accuracy from "@/components/Accuracy";
 import Testimonial from "@/components/Testimonial";
@@ -12,7 +12,7 @@ const Index = () => {
   return (
     <main className="flex min-h-screen flex-col gap-16 bg-background">
       <Hero />
-      <Features />
+      
       <HowItWorks />
       <Testimonial />
       <Accuracy />
