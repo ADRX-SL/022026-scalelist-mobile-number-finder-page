@@ -8,29 +8,45 @@ import { Badge } from "@/components/ui/badge";
 
 const faqItems = [
   {
-    question: "How can I find email addresses with Scalelist's Email Finder tool?",
+    question: "How can I find someone's phone number for free?",
     answer:
-      "To find professional email addresses using our tool, simply provide the person's full name and the domain name or website. Scalelist's Email Finder will then find and verify contact information for the specified professional",
+      "Our 14-days free plan includes 50 free credits, which you can use to find mobile numbers of decision-makers for free. Just upload a CSV or use our Chrome extension to find contact numbers instantly.",
   },
   {
-    question: "How accurate is Scalelist's Email Finder in finding email addresses?",
+    question: "How can I build a list of Mobile Numbers?",
     answer:
-      "Scalelist's Email Finder uses a sophisticated verification process that results in over 98% accuracy when identifying the status of an email address. This process ensures that email addresses marked as 'valid' have a bounce rate of less than 5%.",
+      "To build a cold calling list, start by defining your ideal prospects—like role, seniority, or company size. Then use Scalelist to find and verify mobile numbers from a range of B2B data sources, including social networks. You can search inside the platform, enrich existing lead lists, or pull numbers directly from profiles with our extension. Every number is export-ready and perfect for outreach.",
   },
   {
-    question: "What sets Scalelist's Email Finder ahead from other email lookup tools?",
-    answer:
-      "In addition to being extremely fast, easy to use, and way more affordable than competitors, Scalelist's Email Finder is able to confirm validity status on more email addresses from the same list of prospects, making it ideal for businesses operating with a limited number of prospects.",
+    question: "What's the best way to find a business phone number?",
+    answer: (
+      <div>
+        <p className="mb-2">Use Scalelist's business phone search in three ways:</p>
+        <ul className="list-disc pl-5 space-y-1">
+          <li>Upload a CSV with names and companies to enrich it with verified mobile numbers.</li>
+          <li>Use our Chrome extension on Social Networks to get contact numbers in one click.</li>
+        </ul>
+      </div>
+    ),
   },
   {
-    question: "Can I find email addresses from a list of people?",
+    question: "How accurate is Scalelist's phone finder?",
     answer:
-      "Yes, you can find email addresses from a list of people by using our bulk search feature. Upload a list of names and companies, and our email address finder will provide verified email addresses and their verification status in a CSV or Excel format\n\nThis email list can be easily imported in any CRM.",
+      "Scalelist's contact number finder by name uses live data sources and verification layers to deliver accurate mobile numbers. We consistently hit high match rates on mobile enrichment—especially for sales, growth, and outbound teams who need reliable cold calling numbers.",
   },
   {
-    question: "How much does it cost to use Scalelist's Email Finder for searching email addresses?",
-    answer:
-      "You only use 1 credit for each verified email you unlock. Every email on Scalelist is always verified. If you've already searched that contact, you won't be charged. Our 14-days free plan includes 50 free credits. Paid plans start at $49/month for 1,500 credits, and the cost per credit drops on higher plans as you scale. You can also try the email finder on this page with 5 free searches.",
+    question: "How much does it cost to use Scalelist's phone finder?",
+    answer: (
+      <div>
+        <p className="mb-2">Scalelist runs on a credit system. Each mobile number found costs 20 credits. You get:</p>
+        <ul className="list-disc pl-5 space-y-1 mb-2">
+          <li>Our 14-days free plan includes 50 free credits.</li>
+          <li>Paid plans with higher volumes and team features</li>
+          <li>Custom pricing for high-volume B2B sales teams</li>
+        </ul>
+        <p>You only pay when data is found—no fluff, no filler.</p>
+      </div>
+    ),
   },
 ];
 
@@ -44,7 +60,7 @@ const FAQ = () => {
         <h2 className="mb-10 text-center text-4xl font-extrabold tracking-tight text-foreground">
           Frequently asked questions
         </h2>
-        <Accordion type="single" collapsible defaultValue="item-0">
+        <Accordion type="single" collapsible>
           {faqItems.map((item, i) => (
             <AccordionItem key={i} value={`item-${i}`}>
               <AccordionTrigger className="text-left text-base font-semibold">
