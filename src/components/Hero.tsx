@@ -11,7 +11,7 @@ const EmailFinderIcon = () => (
 );
 
 const TrustBar = () => {
-  const logos = ["Google", "docusign", "flixier", "ORACLE", "Webflow", "FreshBooks"];
+  const logos = ["ElevenLabs", "CLOUDERA", "stripe", "J.P.Morgan", "ORACLE NetSuite", "BD"];
   return (
     <div className="border-y border-border bg-white py-8">
       <div className="mx-auto max-w-6xl px-6">
