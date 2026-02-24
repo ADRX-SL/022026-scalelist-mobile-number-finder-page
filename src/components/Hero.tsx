@@ -44,8 +44,8 @@ const Hero = () => {
 
           {/* Subtitle */}
           <p className="mx-auto mb-10 max-w-lg text-lg text-muted-foreground">
-            Get to speak with decision makers by using mobile numbers<br />
-            that actually picks up.
+            Talk directly to decision makers using mobile numbers<br />
+            that actually get answered.
           </p>
 
           {/* Tabs */}
