@@ -30,7 +30,7 @@ const faqItems = [
   {
     question: "How much does it cost to use Scalelist's Email Finder for searching email addresses?",
     answer:
-      "You only use 1 credit for each verified email you unlock. Every email on Scalelist is always verified. If you've already searched that contact, you won't be charged. The Free plan includes 100 credits per month. Paid plans start at $49/month for 1,500 credits, and the cost per credit drops on higher plans as you scale. You can also try the email finder on this page with 5 free searches.",
+      "You only use 1 credit for each verified email you unlock. Every email on Scalelist is always verified. If you've already searched that contact, you won't be charged. Our 14-days free plan includes 50 free credits. Paid plans start at $49/month for 1,500 credits, and the cost per credit drops on higher plans as you scale. You can also try the email finder on this page with 5 free searches.",
   },
 ];
 
