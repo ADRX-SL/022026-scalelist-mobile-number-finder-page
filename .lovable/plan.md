@@ -2,21 +2,21 @@
 
 ## Problem
 
-The Card 2 illustration (LinkedIn profile + extension popup) in `HowItWorks.tsx` does not match the target screenshot. After multiple iterations of CSS-coded recreations, the result still doesn't look right.
+After multiple iterations of hand-coding the Card 2 illustration in CSS/JSX, the result still doesn't match the target. Each attempt introduces new discrepancies.
 
 ## Root Cause
 
-Attempting to pixel-perfectly recreate a complex, layered UI mockup (browser window + LinkedIn profile + floating extension popup) purely in JSX/Tailwind has resulted in proportions, shadows, and positioning that don't match the reference. Each iteration introduces new discrepancies.
+The previous target screenshot files are no longer accessible (`user-uploads://Screenshot_2026-02-25_at_3.16.12 PM-3.png` etc. return "file does not exist"). Without the target image, I cannot copy it as an asset.
 
-## Approach: Use the Target Screenshot as an Image
+## What I Need
 
-Instead of continuing to hand-code the illustration and iterate endlessly, the most reliable way to make it "visually indistinguishable from Screenshot 2" is to use the actual screenshot image directly as the illustration.
+The user must **re-upload the target screenshot** (the correct Card 2 design). Once provided, the plan is:
 
 ### Steps
 
-1. **Copy the target screenshot** (`user-uploads://Screenshot_2026-02-25_at_3.16.12 PM-3.png`) into `src/assets/how-it-works-social.png`
+1. **Copy the re-uploaded target image** into `src/assets/how-it-works-social.png`
 
-2. **Replace lines 66-158** in `src/components/HowItWorks.tsx` — remove the entire JSX-based illustration and replace it with:
+2. **Replace lines 1-165** in `src/components/HowItWorks.tsx` — remove the lucide-react imports and entire hand-coded JSX illustration, replace Card 2's illustration with:
    ```tsx
    <div className="flex items-center justify-center rounded-xl bg-background p-6">
      <img
@@ -27,16 +27,13 @@ Instead of continuing to hand-code the illustration and iterate endlessly, the m
    </div>
    ```
 
-3. **Add the import** at the top of the file:
-   ```tsx
-   import howItWorksSocialImg from "@/assets/how-it-works-social.png";
-   ```
+3. **Add import**: `import howItWorksSocialImg from "@/assets/how-it-works-social.png";`
 
-4. **Remove unused imports** (`Globe`, `Scissors`, `Bookmark`, `Play` from lucide-react) since they're no longer needed in the JSX illustration.
+4. **Remove unused imports**: `Globe`, `Scissors`, `Bookmark`, `Play` from lucide-react
 
 ### Result
 
-The illustration will be an exact visual match to the target screenshot — because it IS the screenshot. No more CSS approximation issues.
+The illustration will be pixel-perfect because it IS the target image. No more CSS approximation.
 
 ### What stays the same
 
