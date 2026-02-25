@@ -1,45 +1,46 @@
 
 
-## Analysis
+## Problem
 
-Comparing Screenshot 1 (current output) vs Screenshot 2 (target), the key differences are:
+The Card 2 illustration (LinkedIn profile + extension popup) in `HowItWorks.tsx` does not match the target screenshot. After multiple iterations of CSS-coded recreations, the result still doesn't look right.
 
-1. **Overall scale is too small** — the profile card, extension popup, photos, text, and buttons are all undersized
-2. **Profile card width**: Currently `w-[240px]`, needs to be ~`w-[280px]`
-3. **Profile photo**: Currently `h-16 w-16`, needs to be ~`h-20 w-20` with a thicker border
-4. **Cover photo height**: Currently `h-20`, needs to be taller (~`h-24`)
-5. **Extension popup**: Currently `w-[200px]`, needs to be ~`w-[240px]`
-6. **Extension popup profile photo**: Currently `h-8 w-8`, needs to be ~`h-10 w-10`
-7. **Text sizes**: All text is one step too small (e.g., `text-[10px]` should be `text-xs`, `text-xs` should be `text-sm`)
-8. **Buttons**: "Message" button and "Add to list" button need to be larger with more padding
-9. **"Push to Hubspot"**: Needs to be a rounded-full pill with border, larger text
-10. **"Add to list"**: Needs larger text, more padding, rounded-full with primary border
-11. **Browser dots**: Need to be slightly larger
-12. **Container width**: Currently `width: 320`, needs ~`380-400` to fit the larger elements
-13. **Connections text**: Should read on one line: "82 mutual connections · 2 recent posts on Linkedin"
-14. **Location icon**: Should use ◉ style (circle) instead of 📍 pin emoji
+## Root Cause
 
-## Plan
+Attempting to pixel-perfectly recreate a complex, layered UI mockup (browser window + LinkedIn profile + floating extension popup) purely in JSX/Tailwind has resulted in proportions, shadows, and positioning that don't match the reference. Each iteration introduces new discrepancies.
 
-Edit `src/components/HowItWorks.tsx` lines 67-157 (the Card 2 illustration section):
+## Approach: Use the Target Screenshot as an Image
 
-- Increase container width from 320 to 400, minHeight from 380 to 460
-- Increase profile card from `w-[240px]` to `w-[280px]`
-- Increase cover photo from `h-20` to `h-28` with larger bokeh circles
-- Increase profile photo from `h-16 w-16` to `h-20 w-20` with `border-[3px] border-primary`
-- Increase name text from `text-sm` to `text-base`
-- Increase subtitle text from `text-[11px]` to `text-xs`
-- Replace 📍 with ◉ location icon
-- Increase "Message" button padding and text size
-- Increase extension popup from `w-[200px]` to `w-[240px]`
-- Increase extension popup profile photo from `h-8 w-8` to `h-10 w-10`
-- Increase extension popup name from `text-xs` to `text-sm font-bold`
-- Increase subtitle text in popup from `text-[10px]` to `text-xs`
-- Increase "Push to Hubspot" and "Add to list" buttons — larger text (`text-xs`), more padding, rounded-full for both
-- Increase "Contact details" and contact info text from `text-[10px]` to `text-sm`
-- Increase icon sizes in popup header from `h-3 w-3` to `h-4 w-4`
-- Increase FREE badge text size
-- Increase connections text from `text-[9px]` to `text-[11px]`
+Instead of continuing to hand-code the illustration and iterate endlessly, the most reliable way to make it "visually indistinguishable from Screenshot 2" is to use the actual screenshot image directly as the illustration.
 
-No other changes to the page.
+### Steps
+
+1. **Copy the target screenshot** (`user-uploads://Screenshot_2026-02-25_at_3.16.12 PM-3.png`) into `src/assets/how-it-works-social.png`
+
+2. **Replace lines 66-158** in `src/components/HowItWorks.tsx` — remove the entire JSX-based illustration and replace it with:
+   ```tsx
+   <div className="flex items-center justify-center rounded-xl bg-background p-6">
+     <img
+       src={howItWorksSocialImg}
+       alt="Chrome extension showing contact details for a LinkedIn profile"
+       className="mx-auto w-full max-w-[400px]"
+     />
+   </div>
+   ```
+
+3. **Add the import** at the top of the file:
+   ```tsx
+   import howItWorksSocialImg from "@/assets/how-it-works-social.png";
+   ```
+
+4. **Remove unused imports** (`Globe`, `Scissors`, `Bookmark`, `Play` from lucide-react) since they're no longer needed in the JSX illustration.
+
+### Result
+
+The illustration will be an exact visual match to the target screenshot — because it IS the screenshot. No more CSS approximation issues.
+
+### What stays the same
+
+- Card 1 (CSV table) — untouched
+- Card headings, descriptions, numbering — untouched
+- Page layout, spacing, colors — untouched
 
