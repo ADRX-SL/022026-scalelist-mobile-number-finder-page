@@ -1,4 +1,4 @@
-import { User, Link, Globe, FileSpreadsheet, CheckCircle } from "lucide-react";
+import { User } from "lucide-react";
 
 const HowItWorks = () => {
   return (
@@ -25,54 +25,27 @@ const HowItWorks = () => {
               Upload a CSV with <span className="font-semibold text-foreground">names and companies</span> to get verified mobile numbers.
             </p>
 
-            {/* Illustration: CSV flow diagram */}
-            <div className="flex items-center justify-center rounded-xl bg-background p-6">
-              <div className="flex items-center gap-6">
-                {/* CSV file icon */}
-                <div className="flex flex-col items-center gap-1">
-                  <div className="flex h-14 w-12 items-center justify-center rounded-lg border border-border bg-primary/5">
-                    <FileSpreadsheet className="h-6 w-6 text-primary" />
-                  </div>
-                  <span className="text-[10px] text-muted-foreground">CSV, XLS, TXT</span>
-                </div>
-
-                {/* Dashed connector */}
-                <div className="flex flex-col items-center gap-3">
-                  {/* Row 1 */}
-                  <div className="flex items-center gap-3">
-                    <div className="h-px w-6 border-t border-dashed border-border" />
-                    <div className="flex items-center gap-2 rounded-full border border-border bg-white px-4 py-2 shadow-sm">
-                      <User className="h-4 w-4 text-muted-foreground" />
-                      <span className="text-sm text-foreground">John Doe</span>
-                    </div>
-                  </div>
-                  {/* Row 2 */}
-                  <div className="flex items-center gap-3">
-                    <div className="h-px w-6 border-t border-dashed border-border" />
-                    <div className="flex items-center gap-2 rounded-full border border-border bg-white px-4 py-2 shadow-sm">
-                      <Link className="h-4 w-4 text-muted-foreground" />
-                      <span className="text-sm text-foreground">monday.com</span>
-                    </div>
-                  </div>
-                  {/* Row 3 */}
-                  <div className="flex items-center gap-3">
-                    <div className="h-px w-6 border-t border-dashed border-border" />
-                    <div className="flex items-center gap-2 rounded-full border border-border bg-white px-4 py-2 shadow-sm">
-                      <Globe className="h-4 w-4 text-muted-foreground" />
-                      <span className="text-sm text-foreground">facebook.com/john</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Arrow + Result */}
-                <div className="flex items-center gap-3">
-                  <div className="h-px w-6 border-t border-dashed border-border" />
-                  <div className="flex items-center gap-2 rounded-full border border-border bg-white px-4 py-2 shadow-sm">
-                    <CheckCircle className="h-4 w-4 text-primary" />
-                    <span className="text-sm text-foreground">+1 (312) 555-0198</span>
-                  </div>
-                </div>
-              </div>
+            {/* Illustration: Data table */}
+            <div className="mx-auto w-full overflow-x-auto rounded-xl bg-background p-4">
+              <table className="mx-auto w-full text-xs text-foreground">
+                <thead>
+                  <tr className="border-b border-border text-left text-muted-foreground">
+                    <th className="pb-2 pr-3 font-medium">LinkedIn URL</th>
+                    <th className="pb-2 pr-3 font-medium">Job Title</th>
+                    <th className="pb-2 pr-3 font-medium">Company</th>
+                    <th className="pb-2 pr-3 font-medium">Email</th>
+                    <th className="pb-2 font-medium">Phone</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-border">
+                  <tr><td className="py-2 pr-3">Maya Kincaid</td><td className="py-2 pr-3">CEO</td><td className="py-2 pr-3">Aivanta</td><td className="py-2 pr-3">maya@aivanta.ai</td><td className="py-2">+14125587342</td></tr>
+                  <tr><td className="py-2 pr-3">Lucas Moreno</td><td className="py-2 pr-3">Managing Partner</td><td className="py-2 pr-3">RevForge Labs</td><td className="py-2 pr-3">lucas@revforge.com</td><td className="py-2">+13109764215</td></tr>
+                  <tr><td className="py-2 pr-3">Matteo Ricci</td><td className="py-2 pr-3">Founder & CEO</td><td className="py-2 pr-3">Verbyte</td><td className="py-2 pr-3">matteo@verbyte.io</td><td className="py-2">+16468952317</td></tr>
+                  <tr><td className="py-2 pr-3">Rohan Patel</td><td className="py-2 pr-3">Co-Founder and CEO</td><td className="py-2 pr-3">Lumyx</td><td className="py-2 pr-3">rohan@lumyx.ai</td><td className="py-2">+12068973455</td></tr>
+                  <tr><td className="py-2 pr-3">Jonas Keller</td><td className="py-2 pr-3">Founder & CEO</td><td className="py-2 pr-3">Nordstack</td><td className="py-2 pr-3">jonas@nordstack.com</td><td className="py-2">+15123894601</td></tr>
+                  <tr><td className="py-2 pr-3">Elina Petrova</td><td className="py-2 pr-3">Founder & CEO</td><td className="py-2 pr-3">Fluxera Finance</td><td className="py-2 pr-3">elina@fluxera.ai</td><td className="py-2">+13478129564</td></tr>
+                </tbody>
+              </table>
             </div>
           </div>
 
