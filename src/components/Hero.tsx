@@ -49,7 +49,7 @@ const Hero = () => {
   return (
     <>
       <section className="relative overflow-hidden pb-16 pt-16">
-        <div className="mx-auto max-w-3xl px-6 text-center">
+        <div className="mx-auto max-w-4xl px-6 text-center">
           {/* Icon + Title */}
           <div className="mb-6 flex items-center justify-center gap-4">
             <MobileFinderIcon />
