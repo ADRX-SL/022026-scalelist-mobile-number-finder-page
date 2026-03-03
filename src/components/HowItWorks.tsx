@@ -69,9 +69,9 @@ const HowItWorks = () => {
 
             {/* Illustration: Browser mockup with extension overlay */}
             <div className="relative flex-1 overflow-hidden">
-              <div className="relative w-full">
+              <div className="relative w-full h-full">
                 {/* Browser window */}
-                <div className="rounded-xl border border-border bg-white shadow-xl overflow-hidden">
+                <div className="rounded-xl border border-border bg-white shadow-xl overflow-hidden h-full">
                   {/* Browser chrome */}
                   <div className="flex items-center gap-2 border-b border-border bg-gray-50 px-4 py-3">
                     <div className="flex gap-1.5">
@@ -95,18 +95,18 @@ const HowItWorks = () => {
                       </div>
                     </div>
                     {/* Profile info */}
-                    <div className="px-4 pt-20 pb-3">
-                      <div className="flex items-center gap-2 mb-0.5">
+                    <div className="px-4 pt-20 pb-5">
+                      <div className="flex items-center gap-2 mb-1">
                         <p className="font-bold text-sm text-foreground">Andrea Riley</p>
                         <span className="text-[10px] text-muted-foreground">1st</span>
                         <span className="rounded border border-border px-1.5 py-0.5 text-[8px] text-muted-foreground">Connected: 2/25/2026</span>
                       </div>
                       <p className="text-xs text-muted-foreground">Sales Director at n8N</p>
-                      <div className="flex items-center gap-3 mt-1 text-[10px] text-muted-foreground">
+                      <div className="flex items-center gap-3 mt-1.5 text-[10px] text-muted-foreground">
                         <span className="flex items-center gap-0.5"><MapPin className="h-2.5 w-2.5" />San Francisco Bay Area</span>
                         <span className="flex items-center gap-0.5"><Users className="h-2.5 w-2.5" />500+ connections</span>
                       </div>
-                      <div className="flex items-center gap-2 mt-2">
+                      <div className="flex items-center gap-2 mt-4">
                         <Button size="sm" className="rounded-full px-4 text-xs gap-1">
                           Message
                         </Button>
@@ -115,7 +115,7 @@ const HowItWorks = () => {
                         </Button>
                         <span className="text-muted-foreground text-lg leading-none">···</span>
                       </div>
-                      <div className="flex items-center gap-2 mt-2 text-[10px] text-muted-foreground">
+                      <div className="flex items-center gap-2 mt-4 text-[10px] text-muted-foreground">
                         <div className="flex -space-x-1">
                           <div className="h-4 w-4 rounded-full bg-primary/20 border border-white" />
                           <div className="h-4 w-4 rounded-full bg-primary/30 border border-white" />
@@ -129,7 +129,7 @@ const HowItWorks = () => {
                 </div>
 
                 {/* Extension panel - overlaid on right */}
-                <div className="absolute top-12 -right-4 w-56 rounded-xl border border-border bg-white shadow-2xl overflow-hidden z-10">
+                <div className="absolute right-0 w-56 rounded-xl border border-border bg-white shadow-2xl overflow-hidden z-10" style={{ top: '2rem' }}>
                   <div className="px-3 pt-3 pb-2">
                     <div className="flex items-start justify-between mb-2">
                       <div className="h-8 w-8 rounded-full shrink-0 overflow-hidden">
