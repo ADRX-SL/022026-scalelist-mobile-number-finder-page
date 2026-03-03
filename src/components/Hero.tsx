@@ -89,7 +89,7 @@ const Hero = () => {
           </div>
 
           {/* Search Form */}
-          <div className="mx-auto max-w-2xl rounded-2xl border border-border bg-muted/40 p-6 shadow-sm">
+          <div className="mx-auto max-w-3xl rounded-2xl border border-border bg-muted/40 p-6 shadow-sm">
             <div className="flex items-center gap-3">
               <input
                 type="text"
