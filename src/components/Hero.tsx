@@ -1,6 +1,12 @@
 import { ArrowRight, Mail, Phone, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
+import logoElevenlabs from "@/assets/logo-elevenlabs.avif";
+import logoCloudera from "@/assets/logo-cloudera.webp";
+import logoStripe from "@/assets/logo-stripe.png";
+import logoJpmorgan from "@/assets/logo-jpmorgan.webp";
+import logoNetsuite from "@/assets/logo-netsuite.webp";
+import logoBd from "@/assets/logo-bd.png";
 
 type Tab = "mobiles" | "emails";
 
@@ -11,15 +17,25 @@ const MobileFinderIcon = () => (
 );
 
 const TrustBar = () => {
-  const logos = ["ElevenLabs", "CLOUDERA", "stripe", "J.P.Morgan", "ORACLE NetSuite", "BD"];
+  const logos = [
+    { name: "ElevenLabs", src: logoElevenlabs, height: "h-8" },
+    { name: "Cloudera", src: logoCloudera, height: "h-5" },
+    { name: "Stripe", src: logoStripe, height: "h-7" },
+    { name: "J.P.Morgan", src: logoJpmorgan, height: "h-7" },
+    { name: "Oracle NetSuite", src: logoNetsuite, height: "h-8" },
+    { name: "BD", src: logoBd, height: "h-7" },
+  ];
   return (
-    <div className="border-y border-border bg-white py-8">
+    <div className="border-y border-border bg-white py-12">
       <div className="mx-auto max-w-6xl px-6">
         <div className="flex flex-wrap items-center justify-between gap-x-8 gap-y-4">
           {logos.map((logo) => (
-            <span key={logo} className="text-lg font-semibold tracking-wide text-muted-foreground/60">
-              {logo}
-            </span>
+            <img
+              key={logo.name}
+              src={logo.src}
+              alt={logo.name}
+              className={`${logo.height} w-auto object-contain opacity-60 grayscale`}
+            />
           ))}
         </div>
       </div>
@@ -62,67 +78,37 @@ const Hero = () => {
               Find mobiles by names
             </button>
             <span className="text-sm text-muted-foreground">OR</span>
-            <button
-              onClick={() => setActiveTab("emails")}
-              className={`flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition-colors ${
-                activeTab === "emails"
-                  ? "bg-primary text-primary-foreground"
-                  : "border border-border bg-white text-foreground hover:bg-muted"
-              }`}
+            <a
+              href="https://scalelist.com/free-email-finder/"
+              className={`flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition-colors border border-border bg-white text-foreground hover:bg-muted`}
             >
               <Mail className="h-4 w-4" />
               Find emails addresses
               <ArrowRight className="h-3 w-3" />
-            </button>
+            </a>
           </div>
 
           {/* Search Form */}
           <div className="mx-auto max-w-2xl rounded-2xl border border-border bg-muted/40 p-6 shadow-sm">
-            {activeTab === "mobiles" ? (
-              <>
-                <div className="flex items-center gap-3">
-                  <input
-                    type="text"
-                    placeholder="Full name"
-                    className="flex-1 rounded-lg border border-border bg-white px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-                  />
-                  <span className="text-muted-foreground font-medium">@</span>
-                  <input
-                    type="text"
-                    placeholder="company.com"
-                    className="flex-1 rounded-lg border border-border bg-white px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-                  />
-                  <Button size="lg" className="rounded-lg px-8 text-base">
-                    Find mobile number
-                  </Button>
-                </div>
-                <p className="mt-3 text-left text-sm text-muted-foreground">
-                  Enter a name and company domain to find the correct email.
-                </p>
-              </>
-            ) : (
-              <>
-                <div className="flex items-center gap-3">
-                  <input
-                    type="text"
-                    placeholder="Full name"
-                    className="flex-1 rounded-lg border border-border bg-white px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-                  />
-                  <span className="text-muted-foreground font-medium">@</span>
-                  <input
-                    type="text"
-                    placeholder="company.com"
-                    className="flex-1 rounded-lg border border-border bg-white px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-                  />
-                  <Button size="lg" className="rounded-lg px-8 text-base">
-                    Find email
-                  </Button>
-                </div>
-                <p className="mt-3 text-left text-sm text-muted-foreground">
-                  Enter a name and company domain to find the correct email.
-                </p>
-              </>
-            )}
+            <div className="flex items-center gap-3">
+              <input
+                type="text"
+                placeholder="Full name"
+                className="flex-1 rounded-lg border border-border bg-white px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+              />
+              <span className="text-muted-foreground font-medium">@</span>
+              <input
+                type="text"
+                placeholder="company.com"
+                className="flex-1 rounded-lg border border-border bg-white px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+              />
+              <Button size="lg" className="rounded-lg px-8 text-base">
+                Find mobile number
+              </Button>
+            </div>
+            <p className="mt-3 text-left text-sm text-muted-foreground">
+              Enter a name and company domain to find the correct email.
+            </p>
           </div>
         </div>
       </section>
