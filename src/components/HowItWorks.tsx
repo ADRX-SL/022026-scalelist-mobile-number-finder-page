@@ -1,4 +1,8 @@
-import { Globe, Scissors, Bookmark, Play } from "lucide-react";
+import { Globe, Scissors, Bookmark, Play, ChevronDown, MapPin, Users } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import andreaRiley from "@/assets/andrea-riley.png";
+import professionalCover from "@/assets/professional-cover.png";
+import scalelistIcon from "@/assets/scalelist-icon.png";
 
 const HowItWorks = () => {
   return (
@@ -63,94 +67,103 @@ const HowItWorks = () => {
               Use our Chrome extension to get mobile numbers from social media and websites in one click.
             </p>
 
-            {/* Illustration: LinkedIn profile with extension overlay */}
+            {/* Illustration: Browser mockup with extension overlay */}
             <div className="flex items-center justify-center rounded-xl bg-background p-6">
-              <div className="relative mx-auto" style={{ width: 420, minHeight: 480 }}>
-                {/* LinkedIn-style profile card */}
-                <div className="w-[300px] overflow-hidden rounded-2xl border border-border bg-white" style={{ boxShadow: '0 4px 24px rgba(0,0,0,0.08)' }}>
-                  {/* Browser chrome bar */}
-                  <div className="flex items-center gap-2 bg-muted/30 px-4 py-3">
-                    <span className="h-3 w-3 rounded-full" style={{ background: 'hsl(var(--primary) / 0.5)' }} />
-                    <span className="h-3 w-3 rounded-full" style={{ background: 'hsl(var(--primary) / 0.35)' }} />
-                    <span className="h-3 w-3 rounded-full" style={{ background: 'hsl(var(--primary) / 0.2)' }} />
-                    <div className="ml-2 flex flex-1 items-center">
-                      <div className="h-2.5 flex-1 rounded-full bg-muted/60" />
+              <div className="relative w-full max-w-md">
+                {/* Browser window */}
+                <div className="rounded-xl border border-border bg-white shadow-xl overflow-hidden">
+                  {/* Browser chrome */}
+                  <div className="flex items-center gap-2 border-b border-border bg-gray-50 px-4 py-3">
+                    <div className="flex gap-1.5">
+                      <div className="h-3 w-3 rounded-full bg-primary/30" />
+                      <div className="h-3 w-3 rounded-full bg-primary/20" />
+                      <div className="h-3 w-3 rounded-full bg-primary/15" />
                     </div>
-                    {/* Scalelist icon placeholder */}
-                    <svg className="h-5 w-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 6h16M4 12h16M4 18h16" /></svg>
+                    <div className="ml-4 flex-1 rounded-md bg-gray-200 px-3 py-1 text-xs text-muted-foreground" />
+                    <img src={scalelistIcon} alt="Scalelist" className="h-6 w-6 rounded" />
                   </div>
-
-                  {/* Cover photo - soft blue gradient with bokeh */}
-                  <div className="relative h-32 overflow-hidden">
-                    <div className="absolute inset-0" style={{
-                      background: 'linear-gradient(135deg, hsl(220 70% 85%) 0%, hsl(200 80% 88%) 40%, hsl(210 60% 82%) 70%, hsl(220 50% 80%) 100%)',
-                    }}>
-                      <div className="absolute left-6 top-4 h-10 w-10 rounded-full" style={{ background: 'rgba(255,255,255,0.3)' }} />
-                      <div className="absolute left-20 top-10 h-14 w-14 rounded-full" style={{ background: 'rgba(255,255,255,0.2)' }} />
-                      <div className="absolute right-12 top-4 h-8 w-8 rounded-full" style={{ background: 'rgba(255,255,255,0.25)' }} />
-                      <div className="absolute right-6 bottom-4 h-6 w-6 rounded-full" style={{ background: 'rgba(255,255,255,0.15)' }} />
+                  {/* Page content - LinkedIn-like profile */}
+                  <div className="p-0">
+                    {/* Cover area */}
+                    <div className="h-20 relative">
+                      <img src={professionalCover} alt="" className="h-full w-full object-cover" />
+                      <div className="absolute -bottom-14 left-4">
+                        <div className="h-32 w-32 rounded-full border-2 border-white overflow-hidden relative">
+                          <img src={andreaRiley} alt="Andrea Riley" className="h-full w-full object-cover" />
+                          <div className="absolute bottom-1 right-1 h-3.5 w-3.5 rounded-full border-2 border-white bg-green-500" />
+                        </div>
+                      </div>
                     </div>
-                  </div>
-
-                  {/* Profile section */}
-                  <div className="-mt-12 px-6 pb-6">
-                    <div className="mb-3 h-24 w-24 overflow-hidden rounded-full border-[4px] border-primary bg-muted" style={{ boxShadow: '0 2px 8px rgba(0,0,0,0.12)' }}>
-                      <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&h=200&fit=crop&crop=face" alt="Andrea Riley" className="h-full w-full object-cover" />
-                    </div>
-                    <p className="text-lg font-bold text-foreground">Andrea Riley <span className="font-normal text-muted-foreground text-sm">1st</span></p>
-                    <p className="text-sm text-muted-foreground">Sales Director at n8N</p>
-                    <p className="text-sm text-muted-foreground flex items-center gap-1">
-                      <span className="text-xs">◉</span> San Francisco Bay Ar...
-                    </p>
-                    <div className="mt-4 flex items-center gap-3">
-                      <span className="rounded-full bg-primary px-6 py-2.5 text-sm font-semibold text-primary-foreground">Message</span>
-                      <span className="h-10 w-10 rounded-full border-2 border-primary/30 bg-primary/5" />
-                    </div>
-                    <div className="mt-4 flex items-center gap-1.5">
-                      <span className="h-4 w-4 rounded-full bg-primary/25" />
-                      <span className="h-4 w-4 rounded-full bg-primary/10" />
-                      <p className="ml-1 text-xs text-muted-foreground">82 mutual connections · 2 recent posts on Linkedin</p>
+                    {/* Profile info */}
+                    <div className="px-4 pt-20 pb-3">
+                      <div className="flex items-center gap-2 mb-0.5">
+                        <p className="font-bold text-sm text-foreground">Andrea Riley</p>
+                        <span className="text-[10px] text-muted-foreground">1st</span>
+                        <span className="rounded border border-border px-1.5 py-0.5 text-[8px] text-muted-foreground">Connected: 2/25/2026</span>
+                      </div>
+                      <p className="text-xs text-muted-foreground">Sales Director at n8N</p>
+                      <div className="flex items-center gap-3 mt-1 text-[10px] text-muted-foreground">
+                        <span className="flex items-center gap-0.5"><MapPin className="h-2.5 w-2.5" />San Francisco Bay Area</span>
+                        <span className="flex items-center gap-0.5"><Users className="h-2.5 w-2.5" />500+ connections</span>
+                      </div>
+                      <div className="flex items-center gap-2 mt-2">
+                        <Button size="sm" className="rounded-full px-4 text-xs gap-1">
+                          Message
+                        </Button>
+                        <Button size="sm" variant="outline" className="rounded-full px-4 text-xs border-primary text-primary gap-1">
+                          <Scissors className="h-3 w-3" /> Export lead
+                        </Button>
+                        <span className="text-muted-foreground text-lg leading-none">···</span>
+                      </div>
+                      <div className="flex items-center gap-2 mt-2 text-[10px] text-muted-foreground">
+                        <div className="flex -space-x-1">
+                          <div className="h-4 w-4 rounded-full bg-primary/20 border border-white" />
+                          <div className="h-4 w-4 rounded-full bg-primary/30 border border-white" />
+                        </div>
+                        <span>82 mutual connections</span>
+                        <span>·</span>
+                        <span>2 recent posts on Linkedin</span>
+                      </div>
                     </div>
                   </div>
                 </div>
 
-                {/* Extension popup overlay */}
-                <div className="absolute right-0 top-12 w-[260px] overflow-hidden rounded-xl border border-border bg-white" style={{ boxShadow: '0 8px 30px rgba(0,0,0,0.12)' }}>
-                  {/* Top bar with icons */}
-                  <div className="flex items-center justify-end gap-2.5 px-5 pt-4">
-                    <Globe className="h-5 w-5 text-muted-foreground" />
-                    <Scissors className="h-5 w-5 text-muted-foreground" />
-                    <Bookmark className="h-5 w-5 text-muted-foreground" />
-                    <span className="ml-1 rounded px-2.5 py-1 text-xs font-bold" style={{ background: 'hsl(142 70% 90%)', color: 'hsl(142 70% 35%)' }}>FREE</span>
+                {/* Extension panel - overlaid on right */}
+                <div className="absolute top-12 -right-16 w-64 rounded-xl border border-border bg-white shadow-2xl overflow-hidden">
+                  <div className="px-4 pt-4 pb-2">
+                    <div className="flex items-start justify-between mb-2">
+                      <div className="h-10 w-10 rounded-full shrink-0 overflow-hidden">
+                        <img src={andreaRiley} alt="Andrea Riley" className="h-full w-full object-cover" />
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <Globe className="h-3.5 w-3.5 text-muted-foreground" />
+                        <Scissors className="h-3.5 w-3.5 text-muted-foreground" />
+                        <Bookmark className="h-3.5 w-3.5 text-muted-foreground" />
+                        <span className="rounded bg-primary/10 px-1 text-[8px] font-bold text-primary">FREE</span>
+                      </div>
+                    </div>
+                    <p className="font-bold text-sm text-foreground">Andrea Riley</p>
+                    <p className="text-xs text-muted-foreground">Sales Director at n8N</p>
+                    <p className="text-[10px] text-muted-foreground mt-0.5">San Francisco Bay Area</p>
                   </div>
 
-                  {/* Profile info */}
-                  <div className="px-5 pb-5 pt-3">
-                    <div className="mb-3 flex items-center gap-3">
-                      <div className="h-12 w-12 overflow-hidden rounded-full bg-muted" style={{ boxShadow: '0 1px 4px rgba(0,0,0,0.1)' }}>
-                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&h=100&fit=crop&crop=face" alt="Andrea Riley" className="h-full w-full object-cover" />
-                      </div>
-                      <div>
-                        <p className="text-base font-bold text-foreground">Andrea Riley</p>
-                        <p className="text-sm text-muted-foreground">Sales Director at n8N</p>
-                        <p className="text-sm text-muted-foreground">San Francisco Bay Area</p>
-                      </div>
+                  <div className="px-4 py-2 flex items-center gap-2">
+                    <div className="flex items-center gap-1 rounded-lg border border-border px-3 py-1.5 text-xs text-muted-foreground flex-1">
+                      <Scissors className="h-3 w-3" />
+                      <span>Push to Hubspot</span>
+                      <ChevronDown className="h-3 w-3 ml-auto" />
                     </div>
+                    <Button size="sm" className="rounded-lg px-3 py-1.5 text-xs gap-1">
+                      <Play className="h-3 w-3 fill-primary-foreground" /> Add to list
+                    </Button>
+                  </div>
 
-                    {/* Action buttons */}
-                    <div className="mb-4 flex items-center gap-2">
-                      <span className="flex items-center gap-1.5 rounded-full border border-border px-4 py-2.5 text-sm text-muted-foreground">
-                        ⚙ Push to Hubspot <span className="text-xs">▾</span>
-                      </span>
-                      <span className="flex items-center gap-1.5 rounded-full border-2 border-primary px-4 py-2.5 text-sm font-semibold text-primary">
-                        <Play className="h-3 w-3 fill-primary" /> Add to list
-                      </span>
-                    </div>
-
-                    {/* Contact details */}
-                    <p className="mb-2 text-base font-medium text-foreground">Contact details <span className="text-xs">▾</span></p>
-                    <p className="text-base font-semibold text-primary">andrea@n8n.com</p>
-                    <p className="text-base font-semibold text-foreground">+1 78 617 74 86</p>
+                  <div className="px-4 py-2">
+                    <p className="text-[10px] font-semibold text-muted-foreground mb-1 flex items-center gap-1">
+                      Contact details <ChevronDown className="h-2.5 w-2.5" />
+                    </p>
+                    <p className="text-xs font-medium text-primary">andrea@n8n.com</p>
+                    <p className="text-xs text-foreground mt-0.5">+1 78 617 74 86</p>
                   </div>
                 </div>
               </div>
