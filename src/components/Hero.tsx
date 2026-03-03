@@ -49,7 +49,7 @@ const Hero = () => {
   return (
     <>
       <section className="relative overflow-hidden pb-16 pt-16">
-        <div className="mx-auto max-w-3xl px-6 text-center">
+        <div className="mx-auto max-w-4xl px-6 text-center">
           {/* Icon + Title */}
           <div className="mb-6 flex items-center justify-center gap-4">
             <MobileFinderIcon />
@@ -89,7 +89,7 @@ const Hero = () => {
           </div>
 
           {/* Search Form */}
-          <div className="mx-auto max-w-2xl rounded-2xl border border-border bg-muted/40 p-6 shadow-sm">
+          <div className="mx-auto max-w-3xl rounded-2xl border border-border bg-muted/40 p-6 shadow-sm">
             <div className="flex items-center gap-3">
               <input
                 type="text"
