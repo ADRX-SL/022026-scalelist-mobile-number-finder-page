@@ -16,7 +16,7 @@ const HowItWorks = () => {
         {/* Two Cards */}
         <div className="grid gap-6 md:grid-cols-2">
           {/* Card 1: Find mobile numbers from CSV */}
-          <div className="rounded-2xl bg-card p-8">
+          <div className="flex flex-col rounded-2xl bg-card p-8">
             <div className="mb-1 flex items-center justify-between">
               <h3 className="text-xl font-bold text-foreground">
                 Find mobile numbers from CSV
@@ -30,8 +30,8 @@ const HowItWorks = () => {
             </p>
 
             {/* Illustration: Data table */}
-            <div className="mx-auto w-full overflow-x-auto rounded-xl bg-background p-4">
-              <table className="mx-auto w-full text-xs text-foreground">
+            <div className="flex-1 overflow-x-auto rounded-xl bg-background p-4">
+              <table className="w-full text-xs text-foreground">
                 <thead>
                   <tr className="border-b border-border text-left text-muted-foreground">
                     <th className="pb-2 pr-3 font-medium">LinkedIn URL</th>
@@ -54,7 +54,7 @@ const HowItWorks = () => {
           </div>
 
           {/* Card 2: Find mobile numbers from social */}
-          <div className="rounded-2xl bg-card p-8">
+          <div className="flex flex-col rounded-2xl bg-card p-8">
             <div className="mb-1 flex items-center justify-between">
               <h3 className="text-xl font-bold text-foreground">
                 Find mobile numbers from social
@@ -68,8 +68,8 @@ const HowItWorks = () => {
             </p>
 
             {/* Illustration: Browser mockup with extension overlay */}
-            <div className="flex items-center justify-center rounded-xl bg-background p-6">
-              <div className="relative w-full max-w-md">
+            <div className="relative flex-1 overflow-hidden">
+              <div className="relative w-full">
                 {/* Browser window */}
                 <div className="rounded-xl border border-border bg-white shadow-xl overflow-hidden">
                   {/* Browser chrome */}
@@ -129,41 +129,41 @@ const HowItWorks = () => {
                 </div>
 
                 {/* Extension panel - overlaid on right */}
-                <div className="absolute top-12 -right-16 w-64 rounded-xl border border-border bg-white shadow-2xl overflow-hidden">
-                  <div className="px-4 pt-4 pb-2">
+                <div className="absolute top-12 -right-4 w-56 rounded-xl border border-border bg-white shadow-2xl overflow-hidden z-10">
+                  <div className="px-3 pt-3 pb-2">
                     <div className="flex items-start justify-between mb-2">
-                      <div className="h-10 w-10 rounded-full shrink-0 overflow-hidden">
+                      <div className="h-8 w-8 rounded-full shrink-0 overflow-hidden">
                         <img src={andreaRiley} alt="Andrea Riley" className="h-full w-full object-cover" />
                       </div>
                       <div className="flex items-center gap-1">
-                        <Globe className="h-3.5 w-3.5 text-muted-foreground" />
-                        <Scissors className="h-3.5 w-3.5 text-muted-foreground" />
-                        <Bookmark className="h-3.5 w-3.5 text-muted-foreground" />
-                        <span className="rounded bg-primary/10 px-1 text-[8px] font-bold text-primary">FREE</span>
+                        <Globe className="h-3 w-3 text-muted-foreground" />
+                        <Scissors className="h-3 w-3 text-muted-foreground" />
+                        <Bookmark className="h-3 w-3 text-muted-foreground" />
+                        <span className="rounded bg-primary/10 px-1 text-[7px] font-bold text-primary">FREE</span>
                       </div>
                     </div>
-                    <p className="font-bold text-sm text-foreground">Andrea Riley</p>
-                    <p className="text-xs text-muted-foreground">Sales Director at n8N</p>
-                    <p className="text-[10px] text-muted-foreground mt-0.5">San Francisco Bay Area</p>
+                    <p className="font-bold text-xs text-foreground">Andrea Riley</p>
+                    <p className="text-[10px] text-muted-foreground">Sales Director at n8N</p>
+                    <p className="text-[9px] text-muted-foreground mt-0.5">San Francisco Bay Area</p>
                   </div>
 
-                  <div className="px-4 py-2 flex items-center gap-2">
-                    <div className="flex items-center gap-1 rounded-lg border border-border px-3 py-1.5 text-xs text-muted-foreground flex-1">
-                      <Scissors className="h-3 w-3" />
+                  <div className="px-3 py-1.5 flex items-center gap-1.5">
+                    <div className="flex items-center gap-1 rounded-lg border border-border px-2 py-1 text-[10px] text-muted-foreground flex-1">
+                      <Scissors className="h-2.5 w-2.5" />
                       <span>Push to Hubspot</span>
-                      <ChevronDown className="h-3 w-3 ml-auto" />
+                      <ChevronDown className="h-2.5 w-2.5 ml-auto" />
                     </div>
-                    <Button size="sm" className="rounded-lg px-3 py-1.5 text-xs gap-1">
-                      <Play className="h-3 w-3 fill-primary-foreground" /> Add to list
+                    <Button size="sm" className="rounded-lg px-2 py-1 text-[10px] gap-1 h-auto">
+                      <Play className="h-2.5 w-2.5 fill-primary-foreground" /> Add to list
                     </Button>
                   </div>
 
-                  <div className="px-4 py-2">
-                    <p className="text-[10px] font-semibold text-muted-foreground mb-1 flex items-center gap-1">
-                      Contact details <ChevronDown className="h-2.5 w-2.5" />
+                  <div className="px-3 py-1.5">
+                    <p className="text-[9px] font-semibold text-muted-foreground mb-0.5 flex items-center gap-1">
+                      Contact details <ChevronDown className="h-2 w-2" />
                     </p>
-                    <p className="text-xs font-medium text-primary">andrea@n8n.com</p>
-                    <p className="text-xs text-foreground mt-0.5">+1 78 617 74 86</p>
+                    <p className="text-[10px] font-medium text-primary">andrea@n8n.com</p>
+                    <p className="text-[10px] text-foreground mt-0.5">+1 78 617 74 86</p>
                   </div>
                 </div>
               </div>
